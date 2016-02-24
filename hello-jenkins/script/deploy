@@ -1,0 +1,10 @@
+#!/bin/sh
+ 
+ssh vinod@ucdtesttarget.sl.cloud9.ibm.com <<EOF
+  cd ~/Jenkins/hello-jenkins
+  git pull
+  npm install --production
+#  npm install forever -g
+  forever start app.js
+  exit
+EOF
